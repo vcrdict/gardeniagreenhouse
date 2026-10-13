@@ -1,0 +1,1033 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #fbfaf4;
+    color: #183d2b;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    width: 100%;
+    padding: 20px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(251, 250, 244, 0.95);
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    border-bottom: 1px solid #e7e7d8;
+
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    font-size: 32px;
+}
+
+.logo h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    line-height: 1.1;
+}
+
+.logo p {
+    font-size: 11px;
+    color: #75916e;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 32px;
+}
+
+.navbar nav a {
+    text-decoration: none;
+    color: #31563d;
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    color: #d29b27;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 650px;
+    padding: 100px 10%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 80% 30%,
+            #f6df88 0%,
+            transparent 30%
+        ),
+        #eef4df;
+}
+
+.hero-content {
+    max-width: 650px;
+    animation: fadeUp 0.9s ease;
+}
+
+.eyebrow,
+.section-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    color: #d09822;
+    margin-bottom: 18px;
+}
+
+.hero h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(52px, 7vw, 88px);
+    line-height: 0.98;
+    color: #173d2b;
+}
+
+.hero h2 span,
+.section-heading h2 span,
+.order-heading h2 span,
+.about-content h2 span {
+    color: #c99020;
+}
+
+.hero-description {
+    max-width: 540px;
+    margin: 28px 0;
+    font-size: 17px;
+    color: #55705d;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 14px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.primary-btn {
+    background: #1d4d35;
+    color: white;
+}
+
+.primary-btn:hover {
+    background: #d09822;
+    transform: translateY(-3px);
+}
+
+.secondary-btn {
+    border: 1px solid #1d4d35;
+    color: #1d4d35;
+}
+
+.secondary-btn:hover {
+    background: #1d4d35;
+    color: white;
+}
+
+.hero-decoration {
+    width: 320px;
+    height: 320px;
+    position: relative;
+}
+
+.leaf {
+    position: absolute;
+    font-size: 120px;
+    animation: float 4s ease-in-out infinite;
+}
+
+.leaf-one {
+    top: 10px;
+    left: 20px;
+}
+
+.leaf-two {
+    bottom: 20px;
+    right: 10px;
+    animation-delay: 1s;
+}
+
+.flower {
+    position: absolute;
+    top: 100px;
+    left: 110px;
+    font-size: 110px;
+    animation: spin 8s linear infinite;
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+.menu-section {
+    padding: 110px 7%;
+}
+
+.section-heading {
+    max-width: 620px;
+    margin-bottom: 50px;
+}
+
+.section-heading h2,
+.order-heading h2,
+.about-content h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(42px, 5vw, 64px);
+    line-height: 1.05;
+    margin-bottom: 18px;
+}
+
+.section-heading > p:last-child,
+.order-heading > p:last-child,
+.about-content > p {
+    color: #617568;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.food-card {
+    background: white;
+    border-radius: 22px;
+    overflow: hidden;
+
+    border: 1px solid #e6e8db;
+
+    box-shadow: 0 12px 40px rgba(31, 60, 43, 0.07);
+
+    transition: 0.4s;
+}
+
+.food-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(31, 60, 43, 0.14);
+}
+
+.food-image {
+    height: 245px;
+    position: relative;
+    overflow: hidden;
+    background: #e7eedc;
+}
+
+.food-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    display: block;
+
+    transition: 0.5s;
+}
+
+.food-card:hover .food-image img {
+    transform: scale(1.06);
+}
+
+.price {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    background: #f3ce55;
+    color: #173d2b;
+
+    padding: 8px 14px;
+
+    border-radius: 20px;
+
+    font-weight: 800;
+}
+
+.food-info {
+    padding: 26px;
+}
+
+.food-category {
+    color: #d09822;
+    font-size: 10px;
+    letter-spacing: 1.8px;
+    font-weight: 800;
+}
+
+.food-info h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    margin: 7px 0;
+}
+
+.food-info p {
+    font-size: 14px;
+    color: #6a7d6e;
+    min-height: 70px;
+}
+
+.add-button {
+    margin-top: 20px;
+
+    width: 100%;
+    padding: 13px 17px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #edf3e6;
+    color: #214a32;
+
+    font-family: inherit;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    transition: 0.3s;
+}
+
+.add-button span {
+    font-size: 22px;
+}
+
+.add-button:hover {
+    background: #1d4d35;
+    color: white;
+}
+
+
+/* =========================
+   ORDER
+========================= */
+
+.order-section {
+    padding: 110px 7%;
+    background: #173d2b;
+    color: white;
+}
+
+.order-container {
+    max-width: 1150px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.order-heading {
+    position: sticky;
+    top: 120px;
+}
+
+.order-heading .section-label {
+    color: #f2c94c;
+}
+
+.order-heading h2 {
+    color: white;
+}
+
+.order-heading > p:last-child {
+    color: #c5d2c7;
+}
+
+.order-card {
+    background: #fff;
+    color: #183d2b;
+
+    padding: 30px;
+    border-radius: 24px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.empty-order {
+    text-align: center;
+    padding: 30px 10px;
+    border-bottom: 1px solid #e7e9df;
+}
+
+.empty-icon {
+    font-size: 42px;
+    margin-bottom: 8px;
+}
+
+.empty-order h3 {
+    font-size: 19px;
+}
+
+.empty-order p {
+    color: #778579;
+    font-size: 14px;
+}
+
+.order-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.order-item {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+
+    background: #f4f7ee;
+    border: 1px solid #e1e9dc;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.order-item > .item-info {
+    padding: 15px 15px 8px;
+}
+
+.order-item > .item-controls {
+    padding: 8px 15px 15px;
+    flex-wrap: wrap;
+}
+
+.item-info strong {
+    display: block;
+}
+
+.item-info small {
+    color: #718070;
+}
+
+.item-controls {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.quantity-button {
+    width: 27px;
+    height: 27px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #dfead7;
+    color: #214a32;
+
+    cursor: pointer;
+    font-weight: 800;
+}
+
+.remove-button {
+    background: none;
+    border: none;
+    color: #c66c5c;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.order-total {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 22px 5px;
+
+    border-top: 1px solid #e4e8df;
+    border-bottom: 1px solid #e4e8df;
+
+    margin-bottom: 25px;
+}
+
+.order-total strong {
+    font-size: 24px;
+    color: #d09822;
+}
+
+.form-title h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.input-group.full {
+    grid-column: 1 / -1;
+}
+
+.input-group label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #42604b;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+
+    border: 1px solid #dce2d8;
+    border-radius: 10px;
+
+    padding: 12px 14px;
+
+    font-family: inherit;
+    outline: none;
+
+    transition: 0.3s;
+}
+
+.input-group textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #d09822;
+    box-shadow: 0 0 0 3px rgba(208, 152, 34, 0.12);
+}
+
+.submit-order {
+    width: 100%;
+    margin-top: 20px;
+
+    padding: 15px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #d09822;
+    color: white;
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    transition: 0.3s;
+}
+
+.submit-order:hover {
+    background: #1d4d35;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-section {
+    padding: 110px 10%;
+
+    display: grid;
+    grid-template-columns: 1.4fr 0.6fr;
+    gap: 80px;
+    align-items: center;
+
+    background: #f5f1df;
+}
+
+.about-content {
+    max-width: 700px;
+}
+
+.about-content > p {
+    margin-top: 18px;
+}
+
+.about-card {
+    background: white;
+    padding: 45px 30px;
+    border-radius: 25px;
+    text-align: center;
+
+    box-shadow: 0 15px 45px rgba(40, 65, 44, 0.1);
+}
+
+.about-icon {
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+.about-card h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 24px;
+}
+
+.about-card p {
+    color: #718070;
+    margin-top: 8px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #102d20;
+    color: white;
+
+    text-align: center;
+
+    padding: 45px 20px;
+}
+
+.footer-logo {
+    font-size: 19px;
+}
+
+footer p {
+    color: #b6c7bb;
+    font-size: 13px;
+    margin-top: 7px;
+}
+
+footer .email {
+    color: #e8c95a;
+}
+
+.copyright {
+    margin-top: 25px;
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(255,255,255,0.1);
+
+    font-size: 11px;
+    color: #7d9887;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(10, 35, 22, 0.65);
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1000;
+
+    padding: 20px;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 400px;
+
+    background: white;
+
+    border-radius: 25px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    animation: pop 0.3s ease;
+}
+
+.success-icon {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background: #e1efd9;
+    color: #2e7148;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 34px;
+    font-weight: 800;
+}
+
+.modal-content h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 32px;
+}
+
+.modal-content p {
+    color: #708073;
+    margin: 10px 0 25px;
+}
+
+.modal-button {
+    border: none;
+    border-radius: 12px;
+
+    padding: 12px 35px;
+
+    background: #1d4d35;
+    color: white;
+
+    font-family: inherit;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes float {
+
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(5deg);
+    }
+
+}
+
+@keyframes spin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes pop {
+
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
+
+    .navbar {
+        padding: 16px 5%;
+    }
+
+    .navbar nav {
+        gap: 15px;
+    }
+
+    .navbar nav a {
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 80px 7%;
+    }
+
+    .hero-decoration {
+        display: none;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .order-container {
+        grid-template-columns: 1fr;
+    }
+
+    .order-heading {
+        position: static;
+    }
+
+    .about-section {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        min-height: 600px;
+    }
+
+    .hero h2 {
+        font-size: 50px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .input-group.full {
+        grid-column: auto;
+    }
+
+    .order-card {
+        padding: 20px;
+    }
+
+}
+
+
+/* Gardenia Greenhouse cart styling */
+
+.order-item-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.order-item-top .item-info {
+    padding: 0;
+    flex: 1;
+    min-width: 0;
+}
+
+.order-item-top .item-controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.customization-options {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px;
+    padding: 0 15px 15px;
+}
+
+.customization-options label {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 9px;
+    width: 100%;
+    margin: 0;
+    color: #42604b;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.customization-options input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 17px;
+    height: 17px;
+    min-width: 17px;
+    margin: 0;
+    border: 1.5px solid #9caf91;
+    border-radius: 4px;
+    background-color: #ffffff;
+    cursor: pointer;
+    display: inline-grid;
+    place-content: center;
+}
+
+.customization-options input[type="checkbox"]:checked {
+    background-color: #214a32;
+    border-color: #214a32;
+}
+
+.customization-options input[type="checkbox"]:checked::before {
+    content: "✓";
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* Dropdown spacing */
+
+.food-customization summary {
+    padding: 13px 16px;
+    margin: 0;
+    list-style-position: inside;
+    cursor: pointer;
+    color: #214a32;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+/* Remove button */
+
+.order-item > .remove-button {
+    align-self: flex-start;
+    margin: 0 15px 12px;
+    padding: 6px 11px;
+    border: 1px solid #e8c9c2;
+    border-radius: 7px;
+    background: #fbefec;
+    color: #a84f42;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.order-item > .remove-button:hover {
+    background: #a84f42;
+    color: #ffffff;
+}
+
+
+/* Keep quantity and Remove buttons together */
+
+.order-item-top .item-controls .remove-button {
+    margin: 0 0 0 4px;
+    padding: 6px 10px;
+    border: 1px solid #e8c9c2;
+    border-radius: 7px;
+    background: #fbefec;
+    color: #a84f42;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.order-item-top .item-controls .remove-button:hover {
+    background: #a84f42;
+    color: #ffffff;
+}

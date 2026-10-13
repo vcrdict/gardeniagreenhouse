@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gardenia Greenhouse | Grade 9 Pearl</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header class="navbar">
+        <div class="logo">
+            <span class="logo-icon">🌱</span>
+            <div>
+                <h1>Gardenia Greenhouse</h1>
+                <p>Grade 9 Pearl</p>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#order">Order</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="eyebrow">GRADE 9 PEARL • SCHOOL BUSINESS PROJECT</p>
+
+            <h2>
+                Fresh bites.<br>
+                <span>Bright moments.</span>
+            </h2>
+
+            <p class="hero-description">
+                Welcome to Gardenia Greenhouse, where delicious food
+                meets a fresh and cheerful garden-inspired experience.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#menu" class="btn primary-btn">
+                    Explore Our Menu
+                </a>
+
+                <a href="#order" class="btn secondary-btn">
+                    Order Now
+                </a>
+            </div>
+
+        </div>
+
+        <div class="hero-decoration">
+            <div class="leaf leaf-one">🌿</div>
+            <div class="leaf leaf-two">🍃</div>
+            <div class="flower">🌼</div>
+        </div>
+
+    </section>
+
+
+    <!-- MENU -->
+    <section class="menu-section" id="menu">
+
+        <div class="section-heading">
+            <p class="section-label">OUR MENU</p>
+
+            <h2>
+                Made to make<br>
+                <span>your day better.</span>
+            </h2>
+
+            <p>
+                Choose from our freshly prepared sandwiches and refreshing
+                dalandan juice.
+            </p>
+        </div>
+
+
+        <div class="menu-grid">
+
+            <!-- CLUBHOUSE -->
+            <article class="food-card">
+
+                <div class="food-image">
+                    <img
+                        src="images/clubhouse.jpg"
+                        alt="Clubhouse sandwich"
+                    >
+
+                    <span class="price">₱50</span>
+                </div>
+
+                <div class="food-info">
+
+                    <span class="food-category">
+                        SIGNATURE SANDWICH
+                    </span>
+
+                    <h3>Clubhouse Sandwich</h3>
+
+                    
+                    <p>
+                        A satisfying layered sandwich packed with
+                        flavorful fillings, perfect for a quick school meal.
+                    </p>
+
+                    <button
+                        class="add-button"
+                        onclick="addToOrder('Clubhouse Sandwich', 50)"
+                    >
+                        Add to Order
+                        <span>+</span>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- CHICKEN -->
+            <article class="food-card">
+
+                <div class="food-image">
+                    <img
+                        src="images/chicken.jpg"
+                        alt="Chicken sandwich"
+                    >
+
+                    <span class="price">₱45</span>
+                </div>
+
+                <div class="food-info">
+
+                    <span class="food-category">
+                        FAVORITE
+                    </span>
+
+                    <h3>Chicken Sandwich</h3>
+
+                    <p>
+                        A delicious chicken-filled sandwich made for
+                        students who want something simple and satisfying.
+                    </p>
+
+                    <button
+                        class="add-button"
+                        onclick="addToOrder('Chicken Sandwich', 45)"
+                    >
+                        Add to Order
+                        <span>+</span>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- DALANDAN -->
+            <article class="food-card">
+
+                <div class="food-image">
+
+                    <img
+                        src="images/dalandan.jpg"
+                        alt="Dalandan juice"
+                    >
+
+                    <span class="price">₱25</span>
+
+                </div>
+
+                <div class="food-info">
+
+                    <span class="food-category">
+                        REFRESHING DRINK
+                    </span>
+
+                    <h3>Dalandan Juice</h3>
+
+                    <p>
+                        A refreshing citrus drink with a bright,
+                        naturally fruity flavor to complement your meal.
+                    </p>
+
+                    <button
+                        class="add-button"
+                        onclick="addToOrder('Dalandan Juice', 20)"
+                    >
+                        Add to Order
+                        <span>+</span>
+                    </button>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ORDER -->
+    <section class="order-section" id="order">
+
+        <div class="order-container">
+
+            <div class="order-heading">
+
+                <p class="section-label">YOUR ORDER</p>
+
+                <h2>
+                    Ready to<br>
+                    <span>order?</span>
+                </h2>
+
+                <p>
+                    Add your chosen items and fill out your details.
+                    We'll take care of the rest.
+                </p>
+
+            </div>
+
+
+            <div class="order-card">
+
+                <div id="emptyOrder" class="empty-order">
+
+                    <div class="empty-icon">🛒</div>
+
+                    <h3>Your order is empty</h3>
+
+                    <p>
+                        Choose something delicious from our menu.
+                    </p>
+
+                </div>
+
+
+                <div id="orderItems" class="order-items"></div>
+
+
+                <div class="order-total">
+
+                    <span>Total</span>
+
+                    <strong id="totalPrice">
+                        ₱0
+                    </strong>
+
+                </div>
+
+
+                <form id="orderForm">
+
+                    <div class="form-title">
+                        <h3>Customer Details</h3>
+                    </div>
+
+                    <div class="form-grid">
+
+                        <div class="input-group">
+
+                            <label for="name">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="Enter your name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label for="section">
+                                Section
+                            </label>
+
+                            <input
+                                type="text"
+                                id="section"
+                                placeholder="e.g. Grade 9 Pearl"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="input-group full">
+
+                            <label for="notes">
+                                Order Notes
+                            </label>
+
+                            <textarea
+                                id="notes"
+                                placeholder="Optional notes..."
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="submit-order"
+                    >
+                        Place Order
+                        <span>→</span>
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about-section" id="about">
+
+        <div class="about-content">
+
+            <p class="section-label">
+                ABOUT US
+            </p>
+
+            <h2>
+                A little taste of
+                <span>Gardenia Greenhouse.</span>
+            </h2>
+
+            <p>
+                Gardenia Greenhouse is a Grade 9 Pearl student business
+                created to bring affordable, enjoyable, and refreshing
+                food choices to our school community.
+            </p>
+
+            <p>
+                Our menu combines satisfying sandwiches with refreshing
+                dalandan juice, giving students a convenient meal or snack
+                during their busy school day.
+            </p>
+
+        </div>
+
+
+        <div class="about-card">
+
+            <div class="about-icon">
+                🌱
+            </div>
+
+            <h3>Fresh • Simple • Delicious</h3>
+
+            <p>
+                Garden-inspired goodness made for students.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-logo">
+            🌱 <strong>Gardenia Greenhouse</strong>
+        </div>
+
+        <p>
+            Grade 9 Pearl • School Business Project
+        </p>
+
+        <p class="email">
+            greenhousegardenia@gmail.com
+        </p>
+
+        <div class="copyright">
+            © 2026 Gardenia Greenhouse. All rights reserved.
+        </div>
+
+    </footer>
+
+
+    <!-- SUCCESS POPUP -->
+    <div
+        id="successModal"
+        class="modal"
+    >
+
+        <div class="modal-content">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <h2>Order Received!</h2>
+
+            <p>
+                Thank you for ordering from
+                <strong>Gardenia Greenhouse</strong>.
+            </p>
+
+            <button
+                onclick="closeModal()"
+                class="modal-button"
+            >
+                Done
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
